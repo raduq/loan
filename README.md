@@ -34,3 +34,8 @@ Body Parameters:
     "loanTermInYears": 2
 }
 ```
+
+## Future Improvements
+
+- Convert the logic from `Double` to `BigDecimal` to ensure better manipulation of monetary values
+-

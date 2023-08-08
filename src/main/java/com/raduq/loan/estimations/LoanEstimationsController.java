@@ -1,6 +1,8 @@
 package com.raduq.loan.estimations;
 
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/loans")
 public class LoanEstimationsController {
+
+	private final Logger logger = LoggerFactory.getLogger(LoanEstimationsController.class);
 	private final LoanEstimationsService service;
 
 	public LoanEstimationsController(LoanEstimationsService service) {
@@ -23,6 +27,7 @@ public class LoanEstimationsController {
 	 */
 	@PostMapping("/estimations")
 	public Double estimate(@Valid @RequestBody EstimationRequest request) {
+		logger.info("Estimating EMI for: {}", request);
 		return service.estimate(request);
 	}
 }
