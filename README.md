@@ -38,4 +38,6 @@ Body Parameters:
 ## Future Improvements
 
 - Convert the logic from `Double` to `BigDecimal` to ensure better manipulation of monetary values
--
+- Better handling to when values are 0 (zero)
+- Integrate with sonar/sonarcloud
+- Build dashboards to control errors with prometheus
