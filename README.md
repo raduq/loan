@@ -2,9 +2,14 @@
 
 This project is responsible for calculating a EMI based on received parameters.
 
+## Dependencies
+
+- Java 17
+
 ## Installation
 
 Just start with default spring boot runner.
+It will start at `localhost:8080`
 
 ```bash
 ./gradlew bootrun
@@ -18,7 +23,7 @@ Endpoint:
 
 ```java
 # calculate
-POST /loans/estimations
+POST /api/loans/estimations
 ```
 
 Body Parameters:
