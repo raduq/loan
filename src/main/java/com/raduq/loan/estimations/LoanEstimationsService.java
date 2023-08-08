@@ -15,6 +15,10 @@ public class LoanEstimationsService {
 	 * @return EMI value estimated
 	 */
 	public Double estimate(EstimationRequest request) {
+		if (request.loanValue() == 0
+			|| request.yearlyInterestRate() == 0
+			|| request.loanTermInYears() == 0) return 0D;
+
 		Double monthInterest = request.yearlyInterestRate() / (YEAR_MONTHS * MAX_PERCENTAGE);
 		Double monthlyTerm = request.loanTermInYears() * YEAR_MONTHS;
 
