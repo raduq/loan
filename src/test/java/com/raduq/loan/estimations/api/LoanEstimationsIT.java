@@ -1,6 +1,7 @@
-package com.raduq.loan.estimations;
+package com.raduq.loan.estimations.api;
 
 import com.raduq.loan.LoanApplication;
+import com.raduq.loan.estimations.model.EstimationRequest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;

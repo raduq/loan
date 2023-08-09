@@ -23,6 +23,9 @@ public class LoanExceptionHandler extends ResponseEntityExceptionHandler {
 
 	private final Logger logger = LoggerFactory.getLogger(LoanExceptionHandler.class);
 
+	/**
+	 * Exception handle to catch all unexpected exceptions and throw as error 500.
+	 */
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request) {
 		List<String> details = new ArrayList<>();
@@ -31,6 +34,10 @@ public class LoanExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity(error, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
+	/**
+	 * Exception handler to catch all validation failures and throw as an Error 400 with the proper error message.
+	 * @return an object with the first error message and an array of details with all the other errors.
+	 */
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(
 		MethodArgumentNotValidException ex,

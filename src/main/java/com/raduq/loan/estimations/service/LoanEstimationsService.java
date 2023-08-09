@@ -1,5 +1,6 @@
-package com.raduq.loan.estimations;
+package com.raduq.loan.estimations.service;
 
+import com.raduq.loan.estimations.model.EstimationRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,7 @@ public class LoanEstimationsService {
 		Double monthlyTerm = request.loanTermInYears() * YEAR_MONTHS;
 		logger.debug("Montly interest is {}", monthInterest);
 		logger.debug("Montly monthlyTerm is {}", monthlyTerm);
-		
+
 		return (request.loanValue() * monthInterest * Math.pow(1 + monthInterest, monthlyTerm))
 			/ (Math.pow(1 + monthInterest, monthlyTerm) - 1);
 	}

@@ -1,5 +1,6 @@
-package com.raduq.loan.estimations;
+package com.raduq.loan.estimations.service;
 
+import com.raduq.loan.estimations.model.EstimationRequest;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

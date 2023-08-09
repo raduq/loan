@@ -1,4 +1,4 @@
-package com.raduq.loan.estimations;
+package com.raduq.loan.estimations.model;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
